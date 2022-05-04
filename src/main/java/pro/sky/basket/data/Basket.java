@@ -1,7 +1,7 @@
 package pro.sky.basket.data;
 
 public class Basket {
-int id;
+   private int id;
 
     public Basket(int id) {
         this.id = id;

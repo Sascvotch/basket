@@ -9,17 +9,23 @@ import java.util.*;
 @Service
 @SessionScope
 public class BasketServiceImpl implements BasketService {
-    private final List<Integer> basket = new ArrayList<>();
+
+    private final List<Integer> basketList;
+
+    public BasketServiceImpl(List<Integer> basketList) {
+        this.basketList = basketList;
+    }
+
 
     public List<Integer> basketAdd(List<Integer> idProduct) {
         List<Integer> idProductInBasket = new ArrayList<>(idProduct);
-        basket.addAll(idProductInBasket);
+        basketList.addAll(idProductInBasket);
         System.out.println("Товар " + idProductInBasket + " добавлен в корзину.");
         return idProductInBasket;
     }
 
     public List<Integer> basketGet() {
-        return basket;
+        return basketList;
     }
 
 }
